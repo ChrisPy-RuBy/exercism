@@ -1,2 +1,2 @@
 def hey(phrase):
-    pass
+    return "Whatever."
