@@ -1,0 +1,7 @@
+pycodestyle optparse.py
+
+this will check whether your code comforms to pep8
+
+autopep8 --in-place optparse.py
+
+removing the --in-pac
