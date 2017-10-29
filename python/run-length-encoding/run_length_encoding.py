@@ -1,6 +1,6 @@
 def decode(string):
-    pass
+    return ''
 
 
 def encode(string):
-    pass
+    return ''
