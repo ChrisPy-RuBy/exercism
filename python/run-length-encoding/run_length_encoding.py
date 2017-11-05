@@ -17,10 +17,12 @@ def encode(encoding):
       if tally == 1:
         encoded += x
       else:
-        encoded += (str(tally + 1) + x)
+        print("here", (tally), previous_letter, x)
+        encoded += (str(tally) + previous_letter + x)
     # this increases the tally is a letter is duplicated
     elif x == previous_letter:
       tally += 1
+      previous_letter = x
 
     # this deals with the letter changing and reseting the tally
     else:
@@ -28,8 +30,8 @@ def encode(encoding):
       if previous_letter != "":
         print("here", x)
         if tally == 1:
-           encoded += previous_letter
-           encoded += x
+          encoded += previous_letter
+           # encoded += x
         else: 
           encoded += (str(tally) + previous_letter)
     #  this problem is her
@@ -40,5 +42,11 @@ def encode(encoding):
 
 print (encode('AABBBCCCC'))
 print (encode('XYZ'))
+print (encode('WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB'),
+'12WB12W3B24WB')
 # print (encode(''))
+# 12WB12W3B24W23W 
+# 12WB12W3B24WB
+12WB12W3B24WB 
+12WB12W3B24WB
 

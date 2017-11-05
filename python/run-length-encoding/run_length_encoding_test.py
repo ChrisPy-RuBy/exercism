@@ -12,13 +12,13 @@ class WordCountTests(unittest.TestCase):
     def test_encode_single_characters_only_are_encoded_without_count(self):
         self.assertMultiLineEqual(encode('XYZ'), 'XYZ')
 
-    # def test_encode_string_with_no_single_characters(self):
-    #     self.assertMultiLineEqual(encode('AABBBCCCC'), '2A3B4C')
+    def test_encode_string_with_no_single_characters(self):
+        self.assertMultiLineEqual(encode('AABBBCCCC'), '2A3B4C')
 
-    # def test_encode_single_characters_mixed_with_repeated_characters(self):
-    #     self.assertMultiLineEqual(
-    #         encode('WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB'),
-    #         '12WB12W3B24WB')
+    def test_encode_single_characters_mixed_with_repeated_characters(self):
+        self.assertMultiLineEqual(
+            encode('WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB'),
+            '12WB12W3B24WB')
 
     # def test_encode_multiple_whitespace_mixed_in_string(self):
     #     self.assertMultiLineEqual(encode('  hsqq qww  '), '2 hs2q q2w2 ')
