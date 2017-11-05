@@ -9,8 +9,8 @@ class WordCountTests(unittest.TestCase):
     def test_encode_empty_string(self):
         self.assertMultiLineEqual(encode(''), '')
 
-    # def test_encode_single_characters_only_are_encoded_without_count(self):
-    #     self.assertMultiLineEqual(encode('XYZ'), 'XYZ')
+    def test_encode_single_characters_only_are_encoded_without_count(self):
+        self.assertMultiLineEqual(encode('XYZ'), 'XYZ')
 
     # def test_encode_string_with_no_single_characters(self):
     #     self.assertMultiLineEqual(encode('AABBBCCCC'), '2A3B4C')

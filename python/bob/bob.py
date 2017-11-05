@@ -21,24 +21,16 @@
 
 
 def hey(phrase):
-  # control flow method, takes a phrase, trims leading and trailing whitespace. splits string at space. ? are isolated with line 2. 
-  split_phrase = phrase.strip().split(" ")
-  question = list(split_phrase[-1])
-  # num_words_phrase = number_replacer(split_phrase)
-  if len(phrase.strip()) == 0:
-    return "Fine. Be that way!"
-  if (question[-1] == '?'):
-    if (phrase == phrase.upper()) & (phrase != phrase.lower()) :
-      return "Whoa, chill out!"
+    phrase = phrase.strip()
+    if phrase.isupper():
+        return 'Whoa, chill out!'
+    elif phrase[-1:] == '?':
+        return 'Sure.'
+    elif phrase == '':
+        return 'Fine. Be that way!'
     else:
-      return "Sure."
-  elif (phrase == phrase.upper()):
-    if (phrase == phrase.lower()):
-      return 'Whatever.'
-    else: 
-      return "Whoa, chill out!"
-  else:
-    return "Whatever."
+        return 'Whatever.'
+
 
 
 
