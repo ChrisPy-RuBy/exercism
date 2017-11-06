@@ -43,10 +43,11 @@ def encode(encoding):
   return encoded
 
 
-print (encode('AABBBCCCC'))
-print (encode('XYZ'))
-print (encode('WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB'),
-'12WB12W3B24WB')
-# '2A3B3CC' != '2A3B4C
-# XZ + XYZ
-
+# print (encode('AABBBCCCCDDDAAAA'))
+# print (encode('XYZ'))
+# print (encode('WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB'),
+# '12WB12W3B24WB')
+# # '2A3B3CC' != '2A3B4C
+# # XZ + XYZ
+# 12WB12W3B24WB 
+# 12WB12W3B24WB
