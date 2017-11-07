@@ -1,7 +1,24 @@
+import re
+
 
 def decode(string):
-  return ''
+  new_list = re.split('(\d+)', string)
 
+  processed_list = []
+  for x in new_list:
+    try:
+      processed_list.append(int(x))
+    except ValueError:
+      processed_list.append(x)
+
+  number = 1
+  new_string = ""
+  for x in processed_list:
+    if type(x) == int:
+      number = x
+    else:
+      new_string += (number * x)   
+  return new_string
 
 def encode(encoding):
 
@@ -43,11 +60,3 @@ def encode(encoding):
   return encoded
 
 
-# print (encode('AABBBCCCCDDDAAAA'))
-# print (encode('XYZ'))
-# print (encode('WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB'),
-# '12WB12W3B24WB')
-# # '2A3B3CC' != '2A3B4C
-# # XZ + XYZ
-# 12WB12W3B24WB 
-# 12WB12W3B24WB
