@@ -1,24 +1,32 @@
-import re
-
+import pprint as pprint 
 
 def decode(string):
-  new_list = re.split('(\d+)', string)
 
-  processed_list = []
-  for x in new_list:
+  # parse string 
+
+  previousnumber = 0
+  number_string = "" 
+  output_string = ""
+  for x in string: 
     try:
-      processed_list.append(int(x))
-    except ValueError:
-      processed_list.append(x)
+      int(x)
+      if previousnumber != 0:  
+        number_string += str(previousnumber)
+        previousnumber = int(x)
+      else:
+        previousnumber = int(x)
+    except:
+        number_string += str(previousnumber)
+        output_string += ("," + number_string + "," + x )
+        number_string = ""
+        previousnumber = 0
+    
+  parsed_list = output_string.split(",")
+  parsed_list.pop(0)
+  print (parsed_list)
+        
 
-  number = 1
-  new_string = ""
-  for x in processed_list:
-    if type(x) == int:
-      number = x
-    else:
-      new_string += (number * x)   
-  return new_string
+decode("12A3C")
 
 def encode(encoding):
 
