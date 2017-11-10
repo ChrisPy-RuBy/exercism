@@ -41,12 +41,13 @@ def decode(string):
         expanded_string = (counter * x) 
         output_string += expanded_string
       counter = 1
-  print (output_string)
+  return (output_string)
         
 
 decode("12A3C")
 
 decode("12AB3C")
+decode('12WB12W3B24WB')
 
 def encode(encoding):
 
