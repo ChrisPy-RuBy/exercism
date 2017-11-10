@@ -17,16 +17,36 @@ def decode(string):
         previousnumber = int(x)
     except:
         number_string += str(previousnumber)
-        output_string += ("," + number_string + "," + x )
+        if previousnumber != 0:
+          output_string += ("," + number_string + "," + x )
+        else: 
+          output_string += ("," + x )
         number_string = ""
         previousnumber = 0
     
   parsed_list = output_string.split(",")
   parsed_list.pop(0)
-  print (parsed_list)
+  
+  counter = 1
+  output_string = ""
+
+  for x in parsed_list:
+    try:
+      if int(x):
+        counter = int(x)
+    except:
+      if counter == 1:
+        output_string += x
+      else:
+        expanded_string = (counter * x) 
+        output_string += expanded_string
+      counter = 1
+  print (output_string)
         
 
 decode("12A3C")
+
+decode("12AB3C")
 
 def encode(encoding):
 
