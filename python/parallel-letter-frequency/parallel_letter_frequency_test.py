@@ -16,28 +16,28 @@ class ParallelLetterFrequencyTest(unittest.TestCase):
         expected = {'a': 2}
         self.assertDictEqual(actual, expected)
 
-    # def test_numbers(self):
-    #     actual = calculate(['012', '345', '6789'])
-    #     expected = {}
-    #     self.assertDictEqual(actual, expected)
+    def test_numbers(self):
+        actual = calculate(['012', '345', '6789'])
+        expected = {}
+        self.assertDictEqual(actual, expected)
 
-    # def test_punctuations(self):
-    #     actual = calculate(['[]\;,', './{}|', ':"<>?'])
-    #     expected = {}
-    #     self.assertDictEqual(actual, expected)
+    def test_punctuations(self):
+        actual = calculate(['[]\;,', './{}|', ':"<>?'])
+        expected = {}
+        self.assertDictEqual(actual, expected)
 
-    # def test_whitespaces(self):
-    #     actual = calculate(['  ', '\t ', '\n\n'])
-    #     expected = {}
-    #     self.assertDictEqual(actual, expected)
+    def test_whitespaces(self):
+        actual = calculate(['  ', '\t ', '\n\n'])
+        expected = {}
+        self.assertDictEqual(actual, expected)
 
-    # def test_repeated_string_with_known_frequencies(self):
-    #     letter_frequency = 3
-    #     text_input = 'abc\n' * letter_frequency
-    #     actual = calculate(text_input.split('\n'))
-    #     expected = {'a': letter_frequency, 'b': letter_frequency,
-    #                 'c': letter_frequency}
-    #     self.assertDictEqual(actual, expected)
+    def test_repeated_string_with_known_frequencies(self):
+        letter_frequency = 3
+        text_input = 'abc\n' * letter_frequency
+        actual = calculate(text_input.split('\n'))
+        expected = {'a': letter_frequency, 'b': letter_frequency,
+                    'c': letter_frequency}
+        self.assertDictEqual(actual, expected)
 
     # def test_multiline_text(self):
     #     text_input = "3 Quotes from Excerism Homepage:\n" + \
