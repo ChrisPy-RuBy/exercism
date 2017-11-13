@@ -39,22 +39,22 @@ class ParallelLetterFrequencyTest(unittest.TestCase):
                     'c': letter_frequency}
         self.assertDictEqual(actual, expected)
 
-    # def test_multiline_text(self):
-    #     text_input = "3 Quotes from Excerism Homepage:\n" + \
-    #                  "\tOne moment you feel like you're\n" + \
-    #                  "getting it. The next moment you're\n" + \
-    #                  "stuck.\n" + \
-    #                  "\tYou know what it’s like to be fluent.\n" + \
-    #                  "Suddenly you’re feeling incompetent\n" + \
-    #                  "and clumsy.\n" + \
-    #                  "\tHaphazard, convoluted code is\n" + \
-    #                  "infuriating, not to mention costly. That\n" + \
-    #                  "slapdash explosion of complexity is an\n" + \
-    #                  "expensive yak shave waiting to\n" + \
-    #                  "happen."
-    #     actual = calculate(text_input.split('\n'))
-    #     expected = Counter([x for x in text_input.lower() if x.isalpha()])
-    #     self.assertDictEqual(actual, expected)
+    def test_multiline_text(self):
+        text_input = "3 Quotes from Excerism Homepage:\n" + \
+                     "\tOne moment you feel like you're\n" + \
+                     "getting it. The next moment you're\n" + \
+                     "stuck.\n" + \
+                     "\tYou know what it’s like to be fluent.\n" + \
+                     "Suddenly you’re feeling incompetent\n" + \
+                     "and clumsy.\n" + \
+                     "\tHaphazard, convoluted code is\n" + \
+                     "infuriating, not to mention costly. That\n" + \
+                     "slapdash explosion of complexity is an\n" + \
+                     "expensive yak shave waiting to\n" + \
+                     "happen."
+        actual = calculate(text_input.split('\n'))
+        expected = Counter([x for x in text_input.lower() if x.isalpha()])
+        self.assertDictEqual(actual, expected)
 
 
 if __name__ == '__main__':
