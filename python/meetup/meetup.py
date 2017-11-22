@@ -1,14 +1,35 @@
 from datetime import date
+import pprint
+
+def generate_month(year, month):
+
+    month_dict = {  '1st': {},
+                    '2nd': {},
+                    'teenth': {},
+                    '3rd': {},
+                    '4th': {}
+                }
+    week_dict = dict()
+    day_counter = 1
+
+    for x in month_dict:
+        while day_counter % 7 != 0 :
+            try:
+                week_dict[day_counter] = date(year, month,day_counter).weekday()
+                day_counter += 1
+            except ValueError:
+                month_dict[x] = week_dict 
+                break
+        else:
+            week_dict[day_counter] = date(year, month,day_counter).weekday()
+            month_dict[x] = week_dict
+            continue
+        day_counter += 1
+    return month_dict
+
+
 
 def meetup_day(year, month, day_of_the_week, which):
-    month_dict = {  '1st': [1,2,3,4,5,6,7],
-                    '2nd': [8,9,10,11,12,13,14],
-                    'teenth': [13,14,15,16,17,18,19],
-                    '3rd': [20,21,22,23,24,25,26],
-                    '4th': [27,28,29,30]
-                    }
-
-
 
     days_of_the_week = { 0: "Monday",
                          1: "Tuesday",
@@ -18,7 +39,10 @@ def meetup_day(year, month, day_of_the_week, which):
                          5:"Saturday",
                          6: "Sunday",
                         }
-                         
+
+    first_day = (date(year, month, 1)).weekday()
+    print (first_day)
+    print (days_of_the_week[first_day])                         
 
     for x in month_dict[which]:
         day = date(year, month, x)
@@ -29,16 +53,7 @@ def meetup_day(year, month, day_of_the_week, which):
 
 
 
-meetup_day(2013, 5, 'Monday', 'teenth')
+# meetup_day(2013, 5, 'Monday', 'teenth')
+generate_month(2013, 5)
 
-
-# days_of_the_week = { 0: "Sunday",
-#                      1: "Monday",
-#                      2: "Tuesday",
-#                      3: "Wednesday",
-#                      4: "Thursday",
-#                      5: "Friday",
-#                      6:"Saturday",
-#                      7: "Sunday",
-#                     }
                         
