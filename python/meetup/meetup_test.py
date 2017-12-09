@@ -321,86 +321,86 @@ class MeetupTest(unittest.TestCase):
         self.assertEqual(
             meetup_day(2013, 4, 'Sunday', '4th'), date(2013, 4, 28))
 
-    # def test_last_monday_of_march_2013(self):
-    #     self.assertEqual(
-    #         meetup_day(2013, 3, 'Monday', 'last'), date(2013, 3, 25))
+    def test_last_monday_of_march_2013(self):
+        self.assertEqual(
+            meetup_day(2013, 3, 'Monday', 'last'), date(2013, 3, 25))
 
-    # def test_last_monday_of_april_2013(self):
-    #     self.assertEqual(
-    #         meetup_day(2013, 4, 'Monday', 'last'), date(2013, 4, 29))
+    def test_last_monday_of_april_2013(self):
+        self.assertEqual(
+            meetup_day(2013, 4, 'Monday', 'last'), date(2013, 4, 29))
 
-    # def test_last_tuesday_of_may_2013(self):
-    #     self.assertEqual(
-    #         meetup_day(2013, 5, 'Tuesday', 'last'), date(2013, 5, 28))
+    def test_last_tuesday_of_may_2013(self):
+        self.assertEqual(
+            meetup_day(2013, 5, 'Tuesday', 'last'), date(2013, 5, 28))
 
-    # def test_last_tuesday_of_june_2013(self):
-    #     self.assertEqual(
-    #         meetup_day(2013, 6, 'Tuesday', 'last'), date(2013, 6, 25))
+    def test_last_tuesday_of_june_2013(self):
+        self.assertEqual(
+            meetup_day(2013, 6, 'Tuesday', 'last'), date(2013, 6, 25))
 
-    # def test_last_wednesday_of_july_2013(self):
-    #     self.assertEqual(
-    #         meetup_day(2013, 7, 'Wednesday', 'last'), date(2013, 7, 31))
+    def test_last_wednesday_of_july_2013(self):
+        self.assertEqual(
+            meetup_day(2013, 7, 'Wednesday', 'last'), date(2013, 7, 31))
 
-    # def test_last_wednesday_of_august_2013(self):
-    #     self.assertEqual(
-    #         meetup_day(2013, 8, 'Wednesday', 'last'), date(2013, 8, 28))
+    def test_last_wednesday_of_august_2013(self):
+        self.assertEqual(
+            meetup_day(2013, 8, 'Wednesday', 'last'), date(2013, 8, 28))
 
-    # def test_last_thursday_of_september_2013(self):
-    #     self.assertEqual(
-    #         meetup_day(2013, 9, 'Thursday', 'last'), date(2013, 9, 26))
+    def test_last_thursday_of_september_2013(self):
+        self.assertEqual(
+            meetup_day(2013, 9, 'Thursday', 'last'), date(2013, 9, 26))
 
-    # def test_last_thursday_of_october_2013(self):
-    #     self.assertEqual(
-    #         meetup_day(2013, 10, 'Thursday', 'last'), date(2013, 10, 31))
+    def test_last_thursday_of_october_2013(self):
+        self.assertEqual(
+            meetup_day(2013, 10, 'Thursday', 'last'), date(2013, 10, 31))
 
-    # def test_last_friday_of_november_2013(self):
-    #     self.assertEqual(
-    #         meetup_day(2013, 11, 'Friday', 'last'), date(2013, 11, 29))
+    def test_last_friday_of_november_2013(self):
+        self.assertEqual(
+            meetup_day(2013, 11, 'Friday', 'last'), date(2013, 11, 29))
 
-    # def test_last_friday_of_december_2013(self):
-    #     self.assertEqual(
-    #         meetup_day(2013, 12, 'Friday', 'last'), date(2013, 12, 27))
+    def test_last_friday_of_december_2013(self):
+        self.assertEqual(
+            meetup_day(2013, 12, 'Friday', 'last'), date(2013, 12, 27))
 
-    # def test_last_saturday_of_january_2013(self):
-    #     self.assertEqual(
-    #         meetup_day(2013, 1, 'Saturday', 'last'), date(2013, 1, 26))
+    def test_last_saturday_of_january_2013(self):
+        self.assertEqual(
+            meetup_day(2013, 1, 'Saturday', 'last'), date(2013, 1, 26))
 
-    # def test_last_saturday_of_february_2013(self):
-    #     self.assertEqual(
-    #         meetup_day(2013, 2, 'Saturday', 'last'), date(2013, 2, 23))
+    def test_last_saturday_of_february_2013(self):
+        self.assertEqual(
+            meetup_day(2013, 2, 'Saturday', 'last'), date(2013, 2, 23))
 
-    # def test_last_sunday_of_march_2013(self):
-    #     self.assertEqual(
-    #         meetup_day(2013, 3, 'Sunday', 'last'), date(2013, 3, 31))
+    def test_last_sunday_of_march_2013(self):
+        self.assertEqual(
+            meetup_day(2013, 3, 'Sunday', 'last'), date(2013, 3, 31))
 
-    # def test_last_sunday_of_april_2013(self):
-    #     self.assertEqual(
-    #         meetup_day(2013, 4, 'Sunday', 'last'), date(2013, 4, 28))
+    def test_last_sunday_of_april_2013(self):
+        self.assertEqual(
+            meetup_day(2013, 4, 'Sunday', 'last'), date(2013, 4, 28))
 
-    # def test_last_wednesday_of_february_2012(self):
-    #     self.assertEqual(
-    #         meetup_day(2012, 2, 'Wednesday', 'last'), date(2012, 2, 29))
+    def test_last_wednesday_of_february_2012(self):
+        self.assertEqual(
+            meetup_day(2012, 2, 'Wednesday', 'last'), date(2012, 2, 29))
 
-    # def test_last_wednesday_of_december_2014(self):
-    #     self.assertEqual(
-    #         meetup_day(2014, 12, 'Wednesday', 'last'), date(2014, 12, 31))
+    def test_last_wednesday_of_december_2014(self):
+        self.assertEqual(
+            meetup_day(2014, 12, 'Wednesday', 'last'), date(2014, 12, 31))
 
-    # def test_last_sunday_of_february_2015(self):
-    #     self.assertEqual(
-    #         meetup_day(2015, 2, 'Sunday', 'last'), date(2015, 2, 22))
+    def test_last_sunday_of_february_2015(self):
+        self.assertEqual(
+            meetup_day(2015, 2, 'Sunday', 'last'), date(2015, 2, 22))
 
-    # def test_first_friday_of_december_2012(self):
-    #     self.assertEqual(
-    #         meetup_day(2012, 12, 'Friday', '1st'), date(2012, 12, 7))
+    def test_first_friday_of_december_2012(self):
+        self.assertEqual(
+            meetup_day(2012, 12, 'Friday', '1st'), date(2012, 12, 7))
 
-    # # additional track specific tests
-    # def test_fifth_monday_of_march_2015(self):
-    #     self.assertEqual(
-    #         meetup_day(2015, 3, 'Monday', '5th'), date(2015, 3, 30))
+    # additional track specific tests
+    def test_fifth_monday_of_march_2015(self):
+        self.assertEqual(
+            meetup_day(2015, 3, 'Monday', '5th'), date(2015, 3, 30))
 
-    # def test_nonexistent_fifth_monday_of_february_2015(self):
-    #     with self.assertRaises(MeetupDayException):
-    #         meetup_day(2015, 2, 'Monday', '5th')
+    def test_nonexistent_fifth_monday_of_february_2015(self):
+        with self.assertRaises(MeetupDayException):
+            meetup_day(2015, 2, 'Monday', '5th')
 
 
 if __name__ == '__main__':

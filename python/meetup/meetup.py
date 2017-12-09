@@ -22,8 +22,10 @@ def split_month(month_dict, which):
     'teenth': dict(),
     '3rd': dict(),
     '4th': dict(),
-    '5th': dict()
+    '5th': dict(),
+    'last': dict()
   }
+
 
   if which == "teenth":
     for date, day in month_dict.items():
@@ -37,6 +39,12 @@ def split_month(month_dict, which):
         split_month['3rd'][date] = day
       elif date > 26:
         split_month['4th'][date]  = day
+
+  elif which == 'last':
+    for date, day in month_dict.items():
+      if date > (len(month_dict) - 7):
+        split_month['last'][date] = day 
+
 
   else: 
     for date, day in month_dict.items():
@@ -78,4 +86,4 @@ def meetup_day(year, month, day_of_the_week, which):
 
   return date(year, month, meetup_date)
 
-# print (meetup_day(2013, 8, 'Wednesday', '2nd'))
+print (meetup_day(2013, 8, 'Wednesday', '2nd'))
