@@ -16,6 +16,8 @@ def generate_month(year, month):
 
 def split_month(month_dict, which):
 
+ # TODO Refactor this bollocks
+
   split_month = {
     '1st': dict(),
     '2nd': dict(),
@@ -43,7 +45,7 @@ def split_month(month_dict, which):
   elif which == 'last':
     for date, day in month_dict.items():
       if date > (len(month_dict) - 7):
-        split_month['last'][date] = day 
+        split_month['last'][date] = day x
 
 
   else: 
