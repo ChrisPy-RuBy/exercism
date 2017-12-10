@@ -3,6 +3,7 @@ from collections import Counter
 def detect_anagrams(word, candidates):
 
   # Case matching here is quite hacky. Come up with a better way to do this!
+  # investigate casefold as a way
 
   letter_counter = Counter(word.lower())
 
