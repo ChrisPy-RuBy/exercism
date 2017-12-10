@@ -2,29 +2,18 @@ from collections import Counter
 
 def detect_anagrams(word, candidates):
 
-  letter_counter = Counter(word)
+  # Case matching here is quite hacky. Come up with a better way to do this!
+
+  letter_counter = Counter(word.lower())
+
   counter_list = []
 
   for x in candidates:
-    y = Counter(x)
+
+    z = x.lower()
+    y = Counter(z)
     if y == letter_counter:
-      print (y, letter_counter)
-      counter_list.append(x)
+      if z not in counter_list and z != word.lower():
+        counter_list.append(x)
 
   return (counter_list)
-    
-#   for index, candidate in enumerate(candidates):
-#     for letter in candidate:
-#       if letter in word:
-#         continue
-#       else:
-#         candidates.pop(index)
-#         break
-
-#   return (candidates)
-
-
-candidates = ["tan", "stand", "at"]
-print (detect_anagrams("ant", candidates))
-candidates = ["hello", "world", "zombies", "pants"]
-print (detect_anagrams("diaper", candidates))
