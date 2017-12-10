@@ -4,7 +4,7 @@ class Allergies(object):
         pass
 
     def is_allergic_to(self, item):
-        pass
+        return False
 
     @property
     def lst(self):
