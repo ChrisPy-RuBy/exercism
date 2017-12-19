@@ -16,14 +16,14 @@ class AllergiesTests(unittest.TestCase):
         self.assertIs(allergies.is_allergic_to('cats'), False)
         self.assertIs(allergies.is_allergic_to('strawberries'), False)
 
-    # def test_is_allergic_to_eggs(self):
-    #     self.assertIs(Allergies(1).is_allergic_to('eggs'), True)
+    def test_is_allergic_to_eggs(self):
+        self.assertIs(Allergies(1).is_allergic_to('eggs'), True)
 
-    # def test_allergic_to_eggs_in_addition_to_other_stuff(self):
-    #     allergies = Allergies(5)
-    #     self.assertIs(allergies.is_allergic_to('eggs'), True)
-    #     self.assertIs(allergies.is_allergic_to('shellfish'), True)
-    #     self.assertIs(allergies.is_allergic_to('strawberries'), False)
+    def test_allergic_to_eggs_in_addition_to_other_stuff(self):
+        allergies = Allergies(5)
+        self.assertIs(allergies.is_allergic_to('eggs'), True)
+        self.assertIs(allergies.is_allergic_to('shellfish'), True)
+        self.assertIs(allergies.is_allergic_to('strawberries'), False)
 
     # def test_no_allergies_at_all(self):
     #     self.assertEqual(Allergies(0).lst, [])
