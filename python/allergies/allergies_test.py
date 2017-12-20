@@ -28,8 +28,8 @@ class AllergiesTests(unittest.TestCase):
     # def test_no_allergies_at_all(self):
     #     self.assertEqual(Allergies(0).lst, [])
 
-    # def test_allergic_to_just_eggs(self):
-    #     self.assertEqual(Allergies(1).lst, ['eggs'])
+    def test_allergic_to_just_eggs(self):
+        self.assertEqual(Allergies(1).lst, ['eggs'])
 
     # def test_allergic_to_just_peanuts(self):
     #     self.assertEqual(Allergies(2).lst, ['peanuts'])
