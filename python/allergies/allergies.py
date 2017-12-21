@@ -2,49 +2,40 @@ class Allergies(object):
 
     def __init__(self, score):
         self.score = score
+        self.allergies_list = [ 'eggs',
+                        'peanuts',
+                        'shellfish',
+                        'strawberries',
+                        'tomatoes',
+                        'chocolate',
+                        'pollen',
+                        'cats' ]
+  
   
     def is_allergic_to(self, item):
+      pass
         
 
-        if self.score == 0:
-          return False
-        else: 
-          total_allergies = self.score 
 
-        allergies =dict (
-                        eggs=1,
-                        peanuts=2,
-                        shellfish=4,
-                        strawberries=8,
-                        tomatoes=16,
-                        chocolate=32,
-                        pollen=64,
-                        cats=128
-                        )
 
-        if (total_allergies - allergies[item]) >= 0:
-          return True
-        else: 
-          return False
 
     @property
     def lst(self):
-      internal_score = self.score
-
-      array = ['eggs','peanuts','shellfish','strawberries','tomatoes','chocolate', 'pollen', 'cats']
-      results = []
-      # if internal_score == 0:
-      #   return results
-      # else:
-      for index, item in enumerate(array):
-        if internal_score == 0:
+      personal_allergies_list = []
+      score = self.score
+      for i in range(len(self.allergies_list), -1, -1):
+        j = (2 ** i)
+        print ('score', score, j, i) 
+        if score == 1:
+          personal_allergies_list.append('eggs')
           break
-        elif (2 ** index) == internal_score:
-          results.append(item)
-          internal_score -= (index ** 2)
+        elif score // j > 0:
+          score -= j
+          print (score)
+          personal_allergies_list.append(self.allergies_list[i])
+          print (score, j)
         else:
-          internal_score -= (index-1 ** 2)
-          results.append(array[index-1])
-      return results
-
+          continue
+      print (personal_allergies_list)
+      return personal_allergies_list
       
