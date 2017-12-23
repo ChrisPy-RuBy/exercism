@@ -25,7 +25,6 @@ class Allergies(object):
       score = self.score
       for i in range(len(self.allergies_list), -1, -1):
         j = (2 ** i)
-        print ('score', score, j, i) 
         if score == 1:
           personal_allergies_list.append('eggs')
           break
@@ -33,7 +32,6 @@ class Allergies(object):
           score -= j
           print (score)
           personal_allergies_list.append(self.allergies_list[i])
-          print (score, j)
         else:
           continue
       print (personal_allergies_list)
