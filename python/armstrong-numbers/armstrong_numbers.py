@@ -1,2 +1,12 @@
 def is_armstrong(number):
-    pass
+    arr = list(str(number))
+    sum = 0
+    for x in arr:
+      sum += (int(x)** len(arr))
+    if number == sum:
+      return True
+    else:
+      return False
+
+
+    
