@@ -16,17 +16,17 @@ class RobotTests(unittest.TestCase):
         self.assertEqual(robot.coordinates, (-1, 1))
         self.assertEqual(robot.bearing, SOUTH)
 
-    # def test_turn_right(self):
-    #     robot = Robot()
-    #     for direction in [EAST, SOUTH, WEST, NORTH]:
-    #         robot.turn_right()
-    #         self.assertEqual(robot.bearing, direction)
+    def test_turn_right(self):
+        robot = Robot()
+        for direction in [EAST, SOUTH, WEST, NORTH]:
+            robot.turn_right()
+            self.assertEqual(robot.bearing, direction)
 
-    # def test_turn_left(self):
-    #     robot = Robot()
-    #     for direction in [WEST, SOUTH, EAST, NORTH]:
-    #         robot.turn_left()
-    #         self.assertEqual(robot.bearing, direction)
+    def test_turn_left(self):
+        robot = Robot()
+        for direction in [WEST, SOUTH, EAST, NORTH]:
+            robot.turn_left()
+            self.assertEqual(robot.bearing, direction)
 
     # def test_advance_positive_north(self):
     #     robot = Robot(NORTH, 0, 0)
