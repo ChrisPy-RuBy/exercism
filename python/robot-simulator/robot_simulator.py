@@ -1,9 +1,9 @@
 # Globals for the bearings
 # Change the values as you see fit
-EAST = None
-NORTH = None
-WEST = None
-SOUTH = None
+EAST = (1,0)
+NORTH = (0,1)
+WEST = (-1, 0)
+SOUTH = (0,-1)
 
 DIRECTIONS = [NORTH, EAST, SOUTH, WEST] 
 
@@ -16,17 +16,37 @@ class Robot(object):
 
     def turn_right(self):
         index = DIRECTIONS.index(self.bearing)
-        new_index = index+1
+        
+        if index != 3:
+          new_index = index+1
+        else: 
+          new_index = 0
         self.bearing = DIRECTIONS[new_index]
 
     def turn_left(self):
         index = DIRECTIONS.index(self.bearing)
-        new_index = index-1
-        self.bearing = DIRECTIONS[new_index]       
+        if index != 0:
+          new_index = index-1
+        else:
+          new_index = 3
+        self.bearing = DIRECTIONS[new_index]    
 
+    def advance(self):
+      new_coordinates = (self.coordinates[0] + self.bearing[0], self.coordinates[1] + self.bearing[1] )
+      self.coordinates = new_coordinates
 
-robot = Robot()
-print (robot.bearing)
-robot.turn_right()
-print (robot.bearing)
+    def simulate(self, string):
+      instructions = list(string.upper())
+      for item in instructions:
+        if item == 'A':
+          self.advance()
+        elif item == 'R':
+          self.turn_right()
+        elif item == 'L':
+          self.turn_left()
+        else:
+          raise ValueError
+
+robot = Robot(NORTH, 0, 0)
+
   
