@@ -34,27 +34,27 @@ class AtbashCipherTest(unittest.TestCase):
         ciphertext = "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"
         self.assertMultiLineEqual(encode(plaintext), ciphertext)
 
-    # def test_decode_word(self):
-    #     self.assertMultiLineEqual(decode("vcvix rhn"), "exercism")
+    def test_decode_word(self):
+        self.assertMultiLineEqual(decode("vcvix rhn"), "exercism")
 
-    # def test_decode_sentence(self):
-    #     self.assertMultiLineEqual(
-    #         decode("zmlyh gzxov rhlug vmzhg vkkrm thglm v"),
-    #         "anobstacleisoftenasteppingstone")
+    def test_decode_sentence(self):
+        self.assertMultiLineEqual(
+            decode("zmlyh gzxov rhlug vmzhg vkkrm thglm v"),
+            "anobstacleisoftenasteppingstone")
 
-    # def test_decode_numbers(self):
-    #     self.assertMultiLineEqual(
-    #         decode("gvhgr mt123 gvhgr mt"), "testing123testing")
+    def test_decode_numbers(self):
+        self.assertMultiLineEqual(
+            decode("gvhgr mt123 gvhgr mt"), "testing123testing")
 
-    # def test_decode_all_the_letters(self):
-    #     ciphertext = "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"
-    #     plaintext = "thequickbrownfoxjumpsoverthelazydog"
-    #     self.assertMultiLineEqual(decode(ciphertext), plaintext)
+    def test_decode_all_the_letters(self):
+        ciphertext = "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"
+        plaintext = "thequickbrownfoxjumpsoverthelazydog"
+        self.assertMultiLineEqual(decode(ciphertext), plaintext)
 
-    # # additional track specific test
-    # def test_encode_decode(self):
-    #     self.assertMultiLineEqual(
-    #         decode(encode("Testing, 1 2 3, testing.")), "testing123testing")
+    # additional track specific test
+    def test_encode_decode(self):
+        self.assertMultiLineEqual(
+            decode(encode("Testing, 1 2 3, testing.")), "testing123testing")
 
 
 if __name__ == '__main__':
