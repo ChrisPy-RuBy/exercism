@@ -20,29 +20,29 @@ class SeriesTest(unittest.TestCase):
     def test_can_find_the_largest_product_of_2_with_numbers_in_order(self):
         self.assertEqual(largest_product("0123456789", 2), 72)
 
-    # def test_can_find_the_largest_product_of_2(self):
-    #     self.assertEqual(largest_product("576802143", 2), 48)
+    def test_can_find_the_largest_product_of_2(self):
+        self.assertEqual(largest_product("576802143", 2), 48)
 
-    # def test_can_find_the_largest_product_of_3_with_numbers_in_order(self):
-    #     self.assertEqual(largest_product("0123456789", 3), 504)
+    def test_can_find_the_largest_product_of_3_with_numbers_in_order(self):
+        self.assertEqual(largest_product("0123456789", 3), 504)
 
-    # def test_can_find_the_largest_product_of_3(self):
-    #     self.assertEqual(largest_product("1027839564", 3), 270)
+    def test_can_find_the_largest_product_of_3(self):
+        self.assertEqual(largest_product("1027839564", 3), 270)
 
-    # def test_can_find_the_largest_product_of_5_with_numbers_in_order(self):
-    #     self.assertEqual(largest_product("0123456789", 5), 15120)
+    def test_can_find_the_largest_product_of_5_with_numbers_in_order(self):
+        self.assertEqual(largest_product("0123456789", 5), 15120)
 
-    # def test_can_get_the_largest_product_of_a_big_number(self):
-    #     self.assertEqual(
-    #         largest_product(
-    #             "73167176531330624919225119674426574742355349194934", 6),
-    #         23520)
+    def test_can_get_the_largest_product_of_a_big_number(self):
+        self.assertEqual(
+            largest_product(
+                "73167176531330624919225119674426574742355349194934", 6),
+            23520)
 
-    # def test_reports_zero_if_the_only_digits_are_zero(self):
-    #     self.assertEqual(largest_product("0000", 2), 0)
+    def test_reports_zero_if_the_only_digits_are_zero(self):
+        self.assertEqual(largest_product("0000", 2), 0)
 
-    # def test_reports_zero_if_all_spans_include_zero(self):
-    #     self.assertEqual(largest_product("99099", 3), 0)
+    def test_reports_zero_if_all_spans_include_zero(self):
+        self.assertEqual(largest_product("99099", 3), 0)
 
     # def test_rejects_span_longer_than_string_length(self):
     #     with self.assertRaisesWithMessage(ValueError):

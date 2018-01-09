@@ -1,5 +1,7 @@
 def largest_product(series, size):
 
+  
+
     largest_product = 0  
     for index, value in enumerate(series):
       x =  series[index : index + size]
