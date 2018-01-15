@@ -1,5 +1,5 @@
 class Garden(object):
-    def __init__(self, diagram):
+    def __init__(self, diagram, students=['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Fred', 'Ginny', 'Harriet','Ileana', 'Joseph', 'Kincaid', 'Larry']):
         self.diagram = diagram
         self.values_dict = {
           "R": "Radishes",
@@ -7,7 +7,8 @@ class Garden(object):
           "G": 'Grass',
           "V": "Violets"
         }
-        self.students = ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Fred', 'Ginny', 'Harriet','Ileana', 'Joseph', 'Kincaid', 'Larry']
+        # dont understand why you can't sort alphabetically here!
+        self.students = students
 
     def parse_diagram(self):
       split_diagram = self.diagram.split("\n")
@@ -16,10 +17,13 @@ class Garden(object):
     def plants(self, student):
 
       students_plants = []
+
+      students = self.students.sort()
       
       if student in self.students:
         student_index = self.students.index(student)
       values = (student_index * 2), (student_index * 2 + 1)
+
 
       split_diagram = self.parse_diagram()
       for x in split_diagram:
