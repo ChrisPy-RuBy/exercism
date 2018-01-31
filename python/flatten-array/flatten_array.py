@@ -2,7 +2,7 @@ def flatten(iterable):
   flattened_list = []
 
   def internal_function(iterable):  
-    for index, item in enumerate(iterable):
+    for item in iterable:
       if type(item) == list:
           internal_function(item)
       elif type(item) == int or type(item) == str:
