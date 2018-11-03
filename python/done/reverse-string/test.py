@@ -1,0 +1,4 @@
+
+
+def reverse(value):
+  return ""
