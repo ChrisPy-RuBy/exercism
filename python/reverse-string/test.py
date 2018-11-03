@@ -1,4 +1,0 @@
-
-
-def reverse(value):
-  return ""
