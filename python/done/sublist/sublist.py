@@ -8,8 +8,6 @@ def check_lists(first_list, second_list):
     x = set(first_list)  
     y = set(second_list)
 
-   
-
     if x == y:
         if len(first_list) == len(second_list):
             newvalue = unequalsublist(first_list, second_list, 3) 
