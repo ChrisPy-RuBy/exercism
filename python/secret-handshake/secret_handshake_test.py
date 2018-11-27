@@ -5,6 +5,7 @@ from secret_handshake import handshake, secret_code
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
+
 class SecretHandshakeTest(unittest.TestCase):
     def test_wink_for_1(self):
         self.assertEqual(handshake(1), ['wink'])
@@ -46,32 +47,21 @@ class SecretHandshakeTest(unittest.TestCase):
         self.assertEqual(handshake(0), [])
 
     # Track-specific tests
-
-    @unittest.skip('extra-credit')
     def test_code1(self):
         self.assertEqual(secret_code(['close your eyes', 'jump']), 12)
-
-    @unittest.skip('extra-credit')
     def test_code2(self):
         self.assertEqual(secret_code(['wink', 'double blink']), 3)
-
-    @unittest.skip('extra-credit')
     def test_code3(self):
         self.assertEqual(secret_code(['jump', 'double blink']), 26)
 
-    @unittest.skip('extra-credit')
     def test_reversible1(self):
         self.assertEqual(secret_code(handshake(27)), 27)
-
-    @unittest.skip('extra-credit')
     def test_reversible2(self):
         self.assertEqual(secret_code(handshake(1)), 1)
 
-    @unittest.skip('extra-credit')
     def test_reversible3(self):
         self.assertEqual(secret_code(handshake(7)), 7)
 
-    @unittest.skip('extra-credit')
     def test_reversible4(self):
         inp = ['wink', 'double blink', 'jump']
         self.assertEqual(handshake(secret_code(inp)), inp)
