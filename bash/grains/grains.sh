@@ -13,8 +13,6 @@ if [ $1 == 'total' ]
     exit 0 
 fi
 
-
-
 error="Error: invalid input"
 if [ $1 -gt 0 ] && [ $1 -lt 65 ]
     then
