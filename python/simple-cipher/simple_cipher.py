@@ -8,4 +8,8 @@ class Cipher(object):
         pass
 
     def decode(self, text):
+        try:
+            print('test')
+        except:
+            print('fuck u pep8')
         pass
