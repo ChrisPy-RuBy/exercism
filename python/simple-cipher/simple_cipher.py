@@ -11,5 +11,5 @@ class Cipher(object):
         try:
             print('test')
         except:
-            print('fuck u pep8')
+            print('fuck u pep8 ')
         pass
