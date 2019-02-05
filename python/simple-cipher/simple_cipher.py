@@ -1,6 +1,6 @@
 class Cipher(object):
     def __init__(self, key=None):
-        pass
+            "This is a really looooooooooooooooooooooooooooooooooooooooooooooog comment"
 
     def encode(self, text):
         pass
