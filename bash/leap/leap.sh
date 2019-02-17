@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#set -x          # useful debug
+set -x          # useful debug
 #set -u          # will exit if no parameter set
 
 noargs=$#

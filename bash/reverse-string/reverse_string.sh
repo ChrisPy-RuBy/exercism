@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -x
 var=$1
 rev=""
 i=0
