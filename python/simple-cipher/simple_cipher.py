@@ -1,5 +1,7 @@
 class Cipher(object):
 """
+sdfsaf:w
+:q
 dfgsdfgsdfgsdfgdg:wdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"""
 
 
