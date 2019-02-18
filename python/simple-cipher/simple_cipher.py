@@ -1,15 +1,15 @@
 class Cipher(object):
+"""
+dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"""
+
+
     def __init__(self, key=None):
-        "T h  i sda really looooooooooooooooooooooooooooooooooooooooooooooog comment"
+        self.key = key
 
     def encode(self, text):
-        x = 1
-        x = 6
-        pass
+        self.key = text[:len(text)]
+        return text
 
     def decode(self, text):
-        try:
-            print("test")
-        except:
-            print("fuck u pep8 ")
-        pass
+        self.key = text[:len(text)]
+        return text
