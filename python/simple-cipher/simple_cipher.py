@@ -1,6 +1,6 @@
 class Cipher(object):
 """
-dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"""
+dfgsdfgsdfgsdfgdg:wdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"""
 
 
     def __init__(self, key=None):
