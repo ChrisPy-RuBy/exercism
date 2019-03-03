@@ -1,7 +1,7 @@
 def raindrops(number):
     resultstring = str(number)
 
-    def ing_ang_ong(number, tocheck):
+    def ing_ang_ong(tocheck):
         lookup = {
                   3: 'Pling',
                   5: 'Plang',
@@ -11,10 +11,10 @@ def raindrops(number):
             return lookup[tocheck]
         return ""
 
-    x = [ing_ang_ong(number, 3),
-         ing_ang_ong(number, 5),
-         ing_ang_ong(number, 7)]
+    results = [ing_ang_ong(3),
+               ing_ang_ong(5),
+               ing_ang_ong(7)]
 
-    if any(x):
-        resultstring = "".join(x)
+    if any(results):
+        resultstring = "".join(results)
     return resultstring
