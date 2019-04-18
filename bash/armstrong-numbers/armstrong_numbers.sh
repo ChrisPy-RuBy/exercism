@@ -1,6 +1,6 @@
 #!usr/bin/env bash
 
-var=$1
+var=$(( $1))
 length=${#var}
 sum=0
 
