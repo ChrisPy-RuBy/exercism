@@ -10,7 +10,7 @@
 }
 
 @test "recognizes a perfect lower case pangram" {
-  skip
+  #skip
   run bash pangram.sh "abcdefghijklmnopqrstuvwxyz"
   [ "$status" -eq 0 ]
   [ "$output" == "true" ]
