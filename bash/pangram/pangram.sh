@@ -7,10 +7,12 @@
 
 declare -a arr=("a" "b" "c" "d" "e" "f" "g" "h"
                 "i" "j" "k" "l" "m" "n" "o" "p"
-                "q" "r" "s" "t" "u" "v" "w" "y" "x" "z")
+                "q" "r" "s" "t" "u" "v" "w" "y"
+                "x" "z")
 
 function main () {
     # jesus this is esoteric!
+    # convert to lowercase
     var=${*,,}
     for i in "${arr[@]}"; do
         if [[ $i =~ [$var] ]]; then
