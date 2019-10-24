@@ -1,9 +1,4 @@
 #! usr/bin/env bash
-# set -x
-
-# Notes: could do this with
-# regex, look ahead assertions. Can't do this with bash but can do with grep and awk
-# for loop
 
 declare -a arr=("a" "b" "c" "d" "e" "f" "g" "h"
                 "i" "j" "k" "l" "m" "n" "o" "p"
@@ -11,18 +6,14 @@ declare -a arr=("a" "b" "c" "d" "e" "f" "g" "h"
                 "x" "z")
 
 function main () {
-    # jesus this is esoteric!
     # convert to lowercase
-    var=${*,,}
+    var=${1,,}
     for i in "${arr[@]}"; do
-        if [[ $i =~ [$var] ]]; then
-            true
-        else
+        if ! [[ $i =~ [$var] ]]; then
             echo false && exit 0
         fi
     done
-    echo true && exit 0
+    echo true
 }
-
 
 main "$@"
