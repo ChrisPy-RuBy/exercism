@@ -11,6 +11,6 @@ result=""
 for para in $clean; do
     result=$result${para:0:1}
 done
-echo ${result^^}
+echo "${result^^}"
 
 
