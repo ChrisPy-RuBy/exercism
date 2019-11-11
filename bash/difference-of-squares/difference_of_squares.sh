@@ -16,15 +16,16 @@ sum_of_squares () {
     echo "$total"
   }
 
-
-if [[ $1 == 'square_of_sum' ]]; then
-    square_of_sum "$@"
-elif [[ $1 == 'sum_of_squares' ]]; then
-    sum_of_squares "$@"
-elif [[ $1 == 'difference' ]]; then
-    x=$(square_of_sum "$@")
-    y=$(sum_of_squares "$@")
-    echo $((x-y))
-fi
-
+main () {
+    if [[ $1 == 'square_of_sum' ]]; then
+        square_of_sum "$@"
+    elif [[ $1 == 'sum_of_squares' ]]; then
+        sum_of_squares "$@"
+    elif [[ $1 == 'difference' ]]; then
+        x=$(square_of_sum "$@")
+        y=$(sum_of_squares "$@")
+        echo $((x-y))
+    fi
+}
+main "$@"
 
