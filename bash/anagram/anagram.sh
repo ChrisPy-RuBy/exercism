@@ -1,27 +1,46 @@
 #!/usr/bin/env bash
+# set -x
+# must not return itself.
+# must not return capitalized versions
+# if the length is different then definately not anagram
 
 
-to_check=$1
-list_to_check=$2
+to_check=${1,,}
+declare -A to_check
+for((i=0; i<${#1};i++)); do
+    to_check[${1:i:1}]+=1
+done
 
-whitelist=""
-
-for word in $list_to_check; do
+create_lookup () {
+    declare -A temp
+    for((i=0; i<${#1};i++)); do
+        temp[${1:i:1}]+=1
+    done
+    # now check against the starting word
     blacklist=0
-    for ((i=0; i<${#to_check}; i++)); do
-        if [[ ${to_check} =~ [^$word] ]]; then
+    for key in "${!temp[@]}"; do
+        b_value=${temp[$key]}
+        a_value=${to_check[$key]}
+        if [[ a_value -ne b_value ]]; then
             blacklist=1
         fi
     done
-    if [[ $blacklist -eq 0 ]]; then
-        whitelist="$whitelist $word"
+    echo "$blacklist"
+    }
+
+list_to_check=$2
+whitelist=()
+
+for word in $list_to_check; do
+    # do some string tidying
+    word=${word,,}
+    if [[ ${#word} -eq ${#to_check} ]] && [[ $word != $to_check ]] ; then
+        result=$(create_lookup "$word")
+        if [[ $result == "0" ]]; then
+            whitelist=("${whitelist[@]}" "$word")
+
+        fi
     fi
 done
 
-echo $whitelist
-
-#main () {
-#    # your main function code here
-#  }
-main "$@"
-
+echo "${whitelist[@]}"
