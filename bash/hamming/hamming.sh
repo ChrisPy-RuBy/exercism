@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 main () {
     strand1=$1
     strand2=$2
@@ -19,4 +18,5 @@ main () {
     done
     echo $wrongchars
 }
+
 main "$@"
