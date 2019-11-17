@@ -1,28 +1,20 @@
 #!/usr/bin/env bash
-#set -x
 
-var=$1
-results=""
+main () {
+    results=""
+    if [[ $(($1%3)) == 0 ]]; then
+    results="Pling"; fi
 
+    if [[ $(($1%5)) == 0 ]]; then
+    results=$results"Plang"; fi
 
-if [[ $(($var%3)) == 0 ]]
-then
-    results="Pling"
-fi
+    if [[ $(($1%7)) == 0 ]]; then
+    results=$results"Plong"; fi
 
-if [[ $(($var%5)) == 0 ]]
-then
-    results=$results"Plang"
-fi
+    if [[ $results == "" ]]; then
+    results=$1; fi
 
-if [[ $(($var%7)) == 0 ]]
-then 
-    results=$results"Plong"
-fi
+    echo "$results"
+}
 
-if [[ $results == "" ]]
-then
-    results=$var
-fi
-
-echo $results
+main "$@"
