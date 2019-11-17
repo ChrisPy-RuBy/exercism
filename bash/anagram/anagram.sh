@@ -7,8 +7,8 @@
 
 to_check=${1,,}
 declare -A to_check
-for((i=0; i<${#1};i++)); do
-    to_check[${1:i:1}]+=1
+for((i=0; i<${#to_check};i++)); do
+    to_check[${to_check:i:1}]+=1
 done
 
 create_lookup () {
@@ -33,9 +33,9 @@ whitelist=()
 
 for word in $list_to_check; do
     # do some string tidying
-    word=${word,,}
-    if [[ ${#word} -eq ${#to_check} ]] && [[ $word != $to_check ]] ; then
-        result=$(create_lookup "$word")
+    nword=${word,,}
+    if [[ ${#word} -eq ${#to_check} ]] && [[ $nword != $to_check ]] ; then
+        result=$(create_lookup "$nword")
         if [[ $result == "0" ]]; then
             whitelist=("${whitelist[@]}" "$word")
 
