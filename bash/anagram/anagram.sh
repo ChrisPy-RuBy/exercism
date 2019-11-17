@@ -1,16 +1,6 @@
 #!/usr/bin/env bash
-# set -x
-# must not return itself.
-# must not return capitalized versions
-# if the length is different then definately not anagram
-
-
-to_check=${1,,}
-declare -A to_check
-for((i=0; i<${#to_check};i++)); do
-    to_check[${to_check:i:1}]+=1
-done
-
+# create another lookup for word to be checked
+# check against anagram
 create_lookup () {
     declare -A temp
     for((i=0; i<${#1};i++)); do
@@ -28,19 +18,29 @@ create_lookup () {
     echo "$blacklist"
     }
 
-list_to_check=$2
-whitelist=()
+main () {
+    # create a anagram lookup
+    to_check_v=${1,,}
+    declare -A to_check
+    for((i=0; i<${#to_check_v};i++)); do
+        to_check[${to_check_v:i:1}]+=1
+    done
 
-for word in $list_to_check; do
-    # do some string tidying
-    nword=${word,,}
-    if [[ ${#word} -eq ${#to_check} ]] && [[ $nword != $to_check ]] ; then
-        result=$(create_lookup "$nword")
-        if [[ $result == "0" ]]; then
-            whitelist=("${whitelist[@]}" "$word")
+    list_to_check=$2
+    whitelist=()
 
+    for word in $list_to_check; do
+        # do some string tidying
+        nword=${word,,}
+        if [[ ${#word} -eq ${#to_check_v} ]] && [[ $nword != $to_check_v ]] ; then
+            result=$(create_lookup "$nword")
+            if [[ $result == "0" ]]; then
+                whitelist=("${whitelist[@]}" "$word")
+            fi
         fi
-    fi
-done
+    done
+    echo "${whitelist[@]}"
+}
 
-echo "${whitelist[@]}"
+main "$@"
+
