@@ -1,24 +1,54 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+# determine appropriate position for the letter.
+build_diamond () {
+    test="ABCDEDCBA"
+    length=${#test}
+    mid=5
+    mid_minus=$((mid - 1))
+    pos_start=$mid
+    pos_end=$mid
+    for (( i=0; i<${#test}; i++ )); do
+        row=""
+        for value in $(seq 1 $length); do
+            if [[ $value == "$pos_start" ]] || [[ $value == "$pos_end" ]]; then
+                row=$row"${test:i:1}"
+            else
+                row="$row."
+            fi
+    done
+    if [[ i -lt $mid_minus ]];then
+        (( pos_start -= 1 ))
+        (( pos_end += 1 ))
+    elif [[ i -ge $mid_minus ]]; then
+        (( pos_start += 1 ))
+        (( pos_end -= 1 ))
+    fi
+    row="$row\n"
+    echo $row
+done
+}
+
+
+main () {
+    letters=""
+    width=0
+    for letter in {A..Z}; do
+        letters=$letters$letter
+        if [[ $1 == "$letter" ]]; then
+            width=$((${#letters} + ${#letters}-1))
+            break
+        fi
+    done
+    skip_first=$((${#letters}-2))
+    echo "$skip_first"
+    for ((i=$skip_first; i>=0; i--)); do
+        letters=$letters${letters:i:1}
+    done
+    echo $width $letters
+
+
+}
+#build_diamond "$@"
+main "$@"
+
