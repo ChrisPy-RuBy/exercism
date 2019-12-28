@@ -1,24 +1,20 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+declare -A letter_count
+
+main () {
+    for ((i=0; i<${#1}; i++)); do
+        letter=${1:i:1}
+        if [[ $letter =~ [a-z] ]]; then
+            if [[ -n ${letter_count[$letter]} ]]; then
+                echo "not isogram"; exit 0
+            else
+                letter_count[$letter]=1
+            fi
+        fi
+    done
+    echo "isogram"
+}
+
+main "$@"
+
