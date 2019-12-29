@@ -2,17 +2,16 @@
 
 # determine appropriate position for the letter.
 build_diamond () {
-    test="ABCDEDCBA"
-    length=${#test}
-    mid=5
-    mid_minus=$((mid - 1))
-    pos_start=$mid
-    pos_end=$mid
-    for (( i=0; i<${#test}; i++ )); do
+    letters="$1"
+    length=${#1}
+    mid_minus=$(($2 - 1))
+    pos_start=$2
+    pos_end=$2
+    for (( i=0; i<$length; i++ )); do
         row=""
         for value in $(seq 1 $length); do
             if [[ $value == "$pos_start" ]] || [[ $value == "$pos_end" ]]; then
-                row=$row"${test:i:1}"
+                row=$row"${letters:i:1}"
             else
                 row="$row."
             fi
@@ -24,11 +23,19 @@ build_diamond () {
         (( pos_start += 1 ))
         (( pos_end -= 1 ))
     fi
-    row="$row\n"
     echo $row
 done
 }
 
+find_mid () {
+    length=$1
+    if (( $length % 2 == 0 )); then
+        echo "$(( length / 2))"
+    else
+        (( length -= 1 ))
+        echo "$(( length / 2 + 1))"
+    fi
+    }
 
 main () {
     letters=""
@@ -41,14 +48,11 @@ main () {
         fi
     done
     skip_first=$((${#letters}-2))
-    echo "$skip_first"
     for ((i=$skip_first; i>=0; i--)); do
         letters=$letters${letters:i:1}
     done
-    echo $width $letters
-
-
+    mid=$(find_mid $width)
+    build_diamond $letters $mid
 }
-#build_diamond "$@"
 main "$@"
 
