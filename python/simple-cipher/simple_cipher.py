@@ -9,6 +9,7 @@ dfgsdfgsdfgsdfgdg:wddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
         self.key = key
 
     def encode(self, text):
+        """aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhhhhhhhhhhhhhhhhhhhhhhhh"""
         self.key = text[:len(text)]
         return text
 

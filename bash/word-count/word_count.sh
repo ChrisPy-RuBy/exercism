@@ -15,5 +15,4 @@ for key in "${!dictionary[@]}"; do
 done | sort -rn
 }
 
-# call main with all of the positional arguments
 main "$@"
