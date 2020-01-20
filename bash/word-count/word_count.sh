@@ -7,7 +7,7 @@ for word in $@; do
     if [[ -n "${dictionary[$word]}" ]]; then
          (( dictionary[$word] += 1 ))
      else
-         dictionary[$word]=1
+         dictionary["$word"]=1
      fi
 done
 for key in "${!dictionary[@]}"; do
@@ -15,4 +15,9 @@ for key in "${!dictionary[@]}"; do
 done | sort -rn
 }
 
-main "$@"
+# clean input. Mostly...
+# annoyingly \n, \t, etc are not being matched correctly.
+preclean=${*//\\n/ }
+lowercase=${preclean,,}
+clean=${lowercase//[^0-9a-z\'\"]/ }
+main "$clean"
